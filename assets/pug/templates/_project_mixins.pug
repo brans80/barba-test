@@ -1,0 +1,16 @@
+mixin header
+	header.header
+		.header_in
+			.header_logo_w
+				h2 Barba.js test
+			.header_nav_w.index_mod
+				+menu({
+					gl_class: 'header_nav',
+					items: [
+						{title: 'Home', url: '/'},
+						{title: 'Item', url: '/item.html'},
+
+					]
+				})
+mixin footer
+	footer.footer
