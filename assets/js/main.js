@@ -18,7 +18,6 @@ $(document).ready(function ($) {
 
 		transitions: [{
 			appear(data) { // Хук перехода с null на страницу
-
 				let path = data.current.url.path;
 				let $curLink = $nav.find("[href='" + path + "']");
 				$curLink.addClass('active_mod');
@@ -33,7 +32,7 @@ $(document).ready(function ($) {
 			before(data) { // Хук выполняется перед всеми действиями
 				$('.header_nav_link').addClass('disabled_mod').removeClass('active_mod');
 				let path = data.next.url.path;
-				let $curLink = $nav.find("[href='" + path + "']");
+				let $curLink = 	$(data.trigger);
 				$curLink.addClass('active_mod');
 			},
 
@@ -73,6 +72,8 @@ $(document).ready(function ($) {
 				let $title = $container.find('.section_title');
 				let $text = $container.find('.section_text');
 				let $bg = $container.find('.section_bg');
+
+				console.log(data.target);
 
 				var done = this.async();
 				var tl = new TimelineMax({
